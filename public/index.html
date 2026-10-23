@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LinguaMemory — tradutor com contexto</title>
+    <link rel="stylesheet" href="/app.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>LinguaMemory</h1>
+        <p class="subtitle">Tradução informal com contexto de tom — self-hosted, roda local.</p>
+        <p id="llm-status" class="banner">verificando...</p>
+      </header>
+
+      <form id="translate-form">
+        <label>
+          Mensagem original
+          <textarea id="text" rows="3" required placeholder="Escreva a mensagem que quer traduzir..."></textarea>
+        </label>
+
+        <div class="row">
+          <label>
+            Idioma de origem (opcional)
+            <input id="sourceLang" type="text" placeholder="auto-detect" />
+          </label>
+          <label>
+            Idioma de destino
+            <input id="targetLang" type="text" required placeholder="en, es, pt..." />
+          </label>
+        </div>
+
+        <div class="row">
+          <label>
+            Tipo de mensagem
+            <select id="messageType">
+              <option value="whatsapp_casual">WhatsApp casual</option>
+              <option value="work_email">E-mail de trabalho</option>
+              <option value="discord_chat">Chat no Discord</option>
+              <option value="customer_support">Suporte ao cliente</option>
+              <option value="legal_notice">Aviso legal</option>
+              <option value="flirty_dm">DM de flerte</option>
+              <option value="apology">Desculpa</option>
+              <option value="negotiation">Negociação</option>
+            </select>
+          </label>
+          <label>
+            Importância
+            <select id="importance">
+              <option value="low">Baixa</option>
+              <option value="medium" selected>Média</option>
+              <option value="high">Alta</option>
+              <option value="critical">Crítica</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="row">
+          <label>
+            Formalidade desejada
+            <select id="formality">
+              <option value="very_informal">Muito informal</option>
+              <option value="informal" selected>Informal</option>
+              <option value="neutral">Neutra</option>
+              <option value="formal">Formal</option>
+              <option value="very_formal">Muito formal</option>
+            </select>
+          </label>
+          <label>
+            Relação com o destinatário (opcional)
+            <input id="relationship" type="text" placeholder="cliente antigo, chefe, amigo..." />
+          </label>
+        </div>
+
+        <fieldset>
+          <legend>Tom desejado (escolha ao menos um)</legend>
+          <label><input type="checkbox" name="tone" value="friendly" /> amigável</label>
+          <label><input type="checkbox" name="tone" value="assertive" /> assertivo</label>
+          <label><input type="checkbox" name="tone" value="humble" /> humilde</label>
+          <label><input type="checkbox" name="tone" value="playful" /> brincalhão</label>
+          <label><input type="checkbox" name="tone" value="urgent" /> urgente</label>
+          <label><input type="checkbox" name="tone" value="empathetic" /> empático</label>
+          <label><input type="checkbox" name="tone" value="professional" /> profissional</label>
+          <label><input type="checkbox" name="tone" value="sarcastic" /> sarcástico</label>
+        </fieldset>
+
+        <label>
+          Motivo da mensagem
+          <input id="reason" type="text" required placeholder="ex.: pedir prazo maior pra pagar" />
+        </label>
+
+        <button type="submit">Traduzir</button>
+      </form>
+
+      <section id="result" hidden>
+        <h2>Resultado</h2>
+        <p id="result-placeholder-banner" class="banner" hidden>
+          ⚠️ nenhum LLM configurado — isto é um placeholder, não uma tradução real.
+        </p>
+        <pre id="result-text"></pre>
+        <p id="result-rationale" class="rationale"></p>
+      </section>
+
+      <p id="error" class="error" hidden></p>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>

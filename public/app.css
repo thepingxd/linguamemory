@@ -1,0 +1,137 @@
+:root {
+  font-family: system-ui, -apple-system, sans-serif;
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  background: #0d0714;
+  color: #f2eef7;
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 20px 80px;
+}
+
+header h1 {
+  margin: 0 0 4px;
+  font-size: 28px;
+}
+
+.subtitle {
+  margin: 0 0 12px;
+  color: #b9afc6;
+  font-size: 14px;
+}
+
+.banner {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: #2e2338;
+  color: #7ee2a8;
+  font-size: 13px;
+}
+
+.banner.warn {
+  background: #3a2a1a;
+  color: #f5c16c;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  color: #cfc5da;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+input,
+select,
+textarea {
+  background: #16121f;
+  border: 1px solid #2e2338;
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: #f2eef7;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+fieldset {
+  border: 1px solid #2e2338;
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  padding: 12px;
+}
+
+fieldset legend {
+  font-size: 12px;
+  color: #b9afc6;
+  padding: 0 4px;
+}
+
+fieldset label {
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+}
+
+button {
+  background: #7ee2a8;
+  color: #0d0714;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+button:hover {
+  background: #98ebbb;
+}
+
+#result {
+  margin-top: 28px;
+  border-top: 1px solid #2e2338;
+  padding-top: 20px;
+}
+
+#result-text {
+  white-space: pre-wrap;
+  background: #16121f;
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 15px;
+}
+
+.rationale {
+  color: #8e8b94;
+  font-size: 13px;
+}
+
+.error {
+  margin-top: 16px;
+  color: #ff8a8a;
+  font-size: 14px;
+}
