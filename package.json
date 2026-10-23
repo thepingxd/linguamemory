@@ -1,0 +1,24 @@
+{
+  "name": "linguamemory",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Tradução informal com contexto de tom + shadowing para aprendizado de idiomas, com memória de longo prazo (arquitetura inspirada em akitaonrails/ai-memory).",
+  "license": "MIT",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "gray-matter": "^4.0.3"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^24.0.0",
+    "typescript": "^5.7.3",
+    "vitest": "^5.0.5"
+  }
+}
